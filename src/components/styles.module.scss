@@ -1,0 +1,62 @@
+.container {
+    background-color: #48793e65;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    cursor: grab;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.containerTitle {
+    border-bottom: 2px solid #6B7E88;
+    margin-bottom: 5px;
+    height: 20%;
+    width: 100%;
+}
+
+.containerInfo {
+    display: flex;
+    height: 80%;
+    width: 100%;
+}
+
+.deadlineContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-right: 2px solid #887b6b;
+}
+
+div.containerTitle>input {
+    width: 100%;
+    resize: none;
+    border: none;
+    text-align: center;
+    font-weight: 700;
+    font-family: "Inter", sans-serif;
+    background: transparent;
+    font-size: 18px;
+    outline: none;
+    color: #fff;
+}
+
+div.containerInfo>div>input {
+    width: 100%;
+    resize: none;
+    border: none;
+    text-align: left;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    background: transparent;
+    font-size: 14px;
+    outline: none;
+    color: #fff;
+}
+
+.deletebtn {
+    cursor: pointer;
+}
