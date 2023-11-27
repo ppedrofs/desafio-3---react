@@ -54,7 +54,7 @@ const tarefaEmProgresso = () => {
     setTarefas([...tarefas, todoPayload]);
 };
 
-const adicionarTarefa = () => {
+const adicionarUmaTarefa = () => {
     const todoPayload: ITarefa = {
         id: uuidv4(),
         titulo: "",
@@ -90,20 +90,13 @@ return (
     <div id="container">
         <div>
             <h1>A Fazer</h1>
-            <div
-            className="content"
-            onDragOver={(e) => e.preventDefault()}
-            onDrop={() => dropColumn("incompleto")}
+            <div className="content" onDragOver={(e) => e.preventDefault()} onDrop={() => dropColumn("incompleto")}
         >
             {tarefas
                 .filter((todo) => todo.coluna === "incompleto")
                 .map((todo) => {
                 return (
-                    <div
-                        key={todo.id}
-                        draggable
-                        onDragStart={() => (draggedTodoItem.current = todo.id)}
-                        onDragOver={(e) => e.preventDefault()}
+                    <div key={todo.id} draggable onDragStart={() => (draggedTodoItem.current = todo.id)} onDragOver={(e) => e.preventDefault()}
                     >
                         <Form deletar={deletar} />
                         <button onClick={() => deletar(todo.id)}>
@@ -119,21 +112,13 @@ return (
     </div>
         <div className="coluna">
             <h1>Em andamento</h1>
-        <div
-            className="content"
-            onDragOver={(e) => e.preventDefault()}
-            onDrop={() => dropColumn("progresso")}
+        <div className="content" onDragOver={(e) => e.preventDefault()} onDrop={() => dropColumn("progresso")}
         >
             {tarefas
                 .filter((todo) => todo.coluna === "progresso")
                 .map((todo) => {
                 return (
-                <div
-                    key={todo.id}
-                    draggable
-                    onDragStart={() => (draggedTodoItem.current = todo.id)}
-                    onDragOver={(e) => e.preventDefault()}
-                    onDrop={() => dropColumn("progresso")}
+                <div key={todo.id} draggable onDragStart={() => (draggedTodoItem.current = todo.id)} onDragOver={(e) => e.preventDefault()} onDrop={() => dropColumn("progresso")}
                 >
                     <Form deletar={deletar} />
                     <button onClick={() => deletar(todo.id)}>
@@ -149,21 +134,13 @@ return (
             </div>
         <div>
             <h1>Concluído</h1>
-            <div
-            className="content"
-            onDragOver={(e) => e.preventDefault()}
-            onDrop={() => dropColumn("completo")}
+            <div className="content" onDragOver={(e) => e.preventDefault()} onDrop={() => dropColumn("completo")}
             >
             {tarefas
                 .filter((todo) => todo.coluna === "completo")
                 .map((todo) => {
                 return (
-                <div
-                    key={todo.id}
-                    draggable
-                    onDragStart={() => (draggedTodoItem.current = todo.id)}
-                    onDragOver={(e) => e.preventDefault()}
-                    onDrop={() => dropColumn("completo")}
+                <div key={todo.id} draggable onDragStart={() => (draggedTodoItem.current = todo.id)} onDragOver={(e) => e.preventDefault()} onDrop={() => dropColumn("completo")}
                 >
                     <Form deletar={deletar} />
                     <button onClick={() => deletar(todo.id)}>
@@ -172,7 +149,7 @@ return (
                     </div>
                 );
             })}
-            <button onClick={adicionarTarefa}>
+            <button onClick={adicionarUmaTarefa}>
                 <img src={FotoButton} />
             </button>
                     </div>
